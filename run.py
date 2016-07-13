@@ -7,23 +7,23 @@ game = games.ConnectFour()
 state = game.initial
 
 while True:
-    dificultad = raw_input("Seleccione una dificultad (facil, media, dificil): ")
+    dificultad = raw_input("Select a difficulty (easy, medium, hard): ")
     dificultad = str(dificultad).strip()
-    if dificultad == "facil":
+    if dificultad == "easy":
         dificultad = 1
         break
-    elif dificultad == "media":
+    elif dificultad == "medium":
         dificultad = 2
         break
-    elif dificultad == "dificil":
+    elif dificultad == "hard":
         dificultad = 4
         break
     else:
-        print "Seleccion no valida. Intente de nuevo"
+        print "Invalid input. Try again"
 
 
 while True:
-    jugador = raw_input("Seleccione un jugador para empezar (X o O): ")
+    jugador = raw_input("Select a player to start (X o O): ")
     if jugador == 'X':
         jugador = 'O'
         break
@@ -31,14 +31,14 @@ while True:
         jugador= 'X'
         break
     else:
-        print "Seleccion no valida. Intente de nuevo"
+        print "Invalid input. Try again"
 
 while True:
-    print "Jugador a mover:", game.to_move(state)
+    print "Player to move:", game.to_move(state)
     game.display(state)
 
     if jugador == 'O':
-        col_str = raw_input("Movimiento: ")
+        col_str = raw_input("Movement: ")
         coor = int(str(col_str).strip())
         x = coor
         y = -1
@@ -61,5 +61,5 @@ while True:
     print "-------------------"
     if game.terminal_test(state):
         game.display(state)
-        print "Final de la partida"
+        print "End of the game"
         break
