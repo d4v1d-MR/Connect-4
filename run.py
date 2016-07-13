@@ -23,7 +23,7 @@ while True:
 
 
 while True:
-    jugador = raw_input("Seleccione un jugador para empezar (X u O): ")
+    jugador = raw_input("Seleccione un jugador para empezar (X o O): ")
     if jugador == 'X':
         jugador = 'O'
         break
